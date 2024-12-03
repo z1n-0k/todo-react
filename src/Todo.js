@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTrash, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 const Todo = ({todo, todos, setTodos}) => {
@@ -11,6 +11,7 @@ const Todo = ({todo, todos, setTodos}) => {
                     ...item, completed: !item.completed
                 }
             }
+
             return item;
         }))
     };
@@ -21,10 +22,16 @@ const Todo = ({todo, todos, setTodos}) => {
 
     return (  
         <div className="todo">
-            <li className="todo-item">
+                <li className={`todo-item${todo.completed ? '-completed' : ''}`}>
                 {todo.text}
             </li>
-            <button className="todo-button-check" onClick={setCompletion}><FontAwesomeIcon icon={faCheck} /></button>
+            <button className="todo-button-check" onClick={setCompletion}>{
+                todo.completed ? (
+                    <FontAwesomeIcon icon={faTimes} />
+                    ) : (
+                    <FontAwesomeIcon icon={faCheck} />  
+                )}
+            </button>
             <button className="todo-button-delete" onClick={deleteTodo}><FontAwesomeIcon icon={faTrash} /></button>
         </div>
     );

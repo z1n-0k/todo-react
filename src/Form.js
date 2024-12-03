@@ -1,17 +1,27 @@
-const Form = ({todoInput, setTodoInput,todos,setTodos}) => {
+const Form = (
+    {
+        todoInput, setTodoInput,
+        todos, setTodos, 
+        setFilterStatus,
+        id, setId
+    }) => {
+
+    const filterStatusHandler = (e) => {
+        setFilterStatus(e.target.value);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setTodos([
             ...todos,
             {
-                id: todos ? todos.length + 1 : 1,
+                id: id,
                 text: todoInput, 
                 completed: false
             }
-            
         ])
         setTodoInput("")
+        setId(id+1)
     }
 
     return (
@@ -30,10 +40,10 @@ const Form = ({todoInput, setTodoInput,todos,setTodos}) => {
                 Add
             </button>
 
-            <div className="select">
+            <div className="select" onChange={filterStatusHandler}>
                 <select name="todos" className="filter-todo">
                     <option value="all">All</option>
-                    <option value="completed">Completed</option>
+                    <option value="completed">Complete</option>
                     <option value="incomplete">Incomplete</option>
                 </select>
             </div>

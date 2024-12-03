@@ -44,7 +44,20 @@ form {
   margin-left: 5px;
   font-weight: 700;
   border-radius: 0px;
+  border-style: none;
   outline: none;
+  background-color: #00a7e1;
+  color: #F1FAEE;
+}
+
+.filter-todo:hover{
+  background-color: #F1FAEE;
+  color: #00a7e1;
+  cursor:pointer;
+}
+
+.filter-todo:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .todo-list {
@@ -56,7 +69,6 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1px;
   padding-bottom: 5px;
 }
 
@@ -64,7 +76,8 @@ form {
   color: #1D3557;
   background-color: #F9F7F3;
   display: inline;
-  font-size: 20px;
+  font-size: 25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 500px;
   padding-left: 10px;
   padding-right: 10px;
@@ -93,7 +106,7 @@ form {
 
 .todo-button-delete{
   margin-left: 5px;
-  height: 25px;
+  height: 30px;
   width: 70px;
   background-color: #E63946;
   color: #F1FAEE;
@@ -114,7 +127,7 @@ form {
 
 .todo-button-check {
   margin-left: 5px;
-  height: 25px;
+  height: 30px;
   width: 70px;
   background-color: #2ec4b6;
   color: #F1FAEE;
@@ -131,4 +144,16 @@ form {
 
 .todo-button-check:active{
   cursor:default;
+}
+
+.todo-item-completed {
+  color: #1D3557;
+  background-color: #F9F7F3;
+  display: inline;
+  font-size: 25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: line-through;
 }
