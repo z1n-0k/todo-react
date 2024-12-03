@@ -18,6 +18,7 @@ const Form = ({todoInput, setTodoInput,todos,setTodos}) => {
         <form action=""  onSubmit={handleSubmit}>
             
             <input 
+                required
                 type="text" 
                 value={todoInput}
                 className="todo-input" 
